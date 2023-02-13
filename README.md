@@ -1,0 +1,2 @@
+# DiscordBotStore-v2
+ 
