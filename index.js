@@ -63,15 +63,6 @@
 
     client.on("ready", () => {
 
-        let channel = client.channels.cache.get(config.canalvoz);
-
-        joinVoiceChannel({
-            channelId: channel.id,
-            guildId: channel.guild.id,
-            adapterCreator: channel.guild.voiceAdapterCreator,
-        })
-
-        console.log("Entrei no canal de voz [" + channel.name + "] com sucesso.")
     });
 
     client.on("ready", () => {
@@ -98,6 +89,7 @@
     process.on('uncaughtExceptionMonitor', (error, origin) => {
         console.log(`Erro encontrado:\n\n` + error, origin)
     });
+    
 
 
 

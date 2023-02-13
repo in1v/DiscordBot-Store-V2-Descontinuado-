@@ -19,8 +19,9 @@ module.exports = {
         const embederro = new Discord.MessageEmbed()
         .setDescription(`Você não tem permissão para executar esse comando.`)
         .setColor(config.cor)
-        .setFooter(`${config.nomebot}`)
+        .emsetFooter(`${config.nomebot}`)
                 if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send({ embeds: [embederro] })
+    
      
         const hojepedidos = db2.get(`${moment().format('L')}.pedidos`)  || 0;
         const hojerecebimentos = db2.get(`${moment().format('L')}.recebimentos`) || 0;
