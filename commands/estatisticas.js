@@ -14,14 +14,14 @@ const db2 = new JsonDatabase({
   databasePath:"./databases/myJsonDatabase.json"
 });
 module.exports = {
-    name: "estatisticas",
+    name: "stock", // Coloque o nome do comando do arquivo
     run: async(client, message, args) => {
         const embederro = new Discord.MessageEmbed()
+        .setTitle(`Sem permissão`)
         .setDescription(`Você não tem permissão para executar esse comando.`)
         .setColor(config.cor)
-        .emsetFooter(`${config.nomebot}`)
+        .setFooter(`${config.nomebot}`)
                 if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send({ embeds: [embederro] })
-    
      
         const hojepedidos = db2.get(`${moment().format('L')}.pedidos`)  || 0;
         const hojerecebimentos = db2.get(`${moment().format('L')}.recebimentos`) || 0;
