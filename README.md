@@ -19,7 +19,6 @@ Entre outros...
 ## Mudanças
 
 - Novo layout de vendas 
-- Bot fica em uma call específica
 - Sistema de cargo automatico e messagem de boas vindas
 - Gerenciamente de stock agora é somente via Discord
 
