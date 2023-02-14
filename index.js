@@ -31,9 +31,9 @@
     
     client.on("guildMemberAdd", async (member) => {
 
-        let guild = client.guilds.cache.get("1058335978642747402"); //ID do server
-        let channel = client.channels.cache.get("1074427460164272210"); //ID do canal onde as mensagem de boas vindas vai aparcer
-        const cargo = member.guild.roles.cache.get("1074072936526385152") //Cargo automatico
+        let guild = client.guilds.cache.get(""); //ID do server
+        let channel = client.channels.cache.get(""); //ID do canal onde as mensagem de boas vindas vai aparcer
+        const cargo = member.guild.roles.cache.get("") //Cargo automatico
 
         //Caso queira deixar somente a opção de cargo automatico remova o ID da ""let channel"
     
@@ -60,9 +60,10 @@
 
 
 
+    //ATIVIDADES DO BOT. CASO QUEIRA DEIXAR MENOS ATIVIDADES É SÓ REMOVER AS LETRAS. PRA ALTERAR É SÓ RENOMEÁ-LAS
     client.on("ready", () => {
         let activities = [
-            `a`,
+            `a`, 
             `b`,
             `c`,
             `d`
