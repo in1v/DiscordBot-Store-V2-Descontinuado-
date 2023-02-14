@@ -17,7 +17,7 @@ const embed = new Discord.MessageEmbed()
 .setTitle(`Mostrando o estoque de: ${args[0]}`)
 .setDescription(`\`\`\`${itens.join(" \n") || "Sem estoque"}\`\`\``)
 .setColor(config.cor)
-.setFooter({ text: `${config.nomebot} - Sistema de estoque ` , iconURL: 'https://media.discordapp.net/attachments/1074427460164272210/1074850847059615845/Sem_titulo.png' })
+.setFooter({ text: `${config.nomebot} - Sistema de estoque ` , iconURL: 'FOTO QUE FICA LOGO AO LADO DO NOME. RECOMENDADO QUE TENHA O TAMANHO DE 256X256' }) 
 message.channel.send({embeds: [embed]})
     }
 }

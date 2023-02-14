@@ -33,7 +33,7 @@
     .setTitle(`${config.nomebot} | Sistema de gerenciamento de produtos`)
     .setDescription(`Menu de gerenciamento de produtos`)
     .setColor(config.cor)
-    .setFooter({ text: 'Selecione o menu abaixo e clique no produto que você deseja gerenciar.', iconURL: 'https://cdn.discordapp.com/attachments/1074427460164272210/1074850847059615845/Sem_titulo.png' })
+    .setFooter({ text: 'Selecione o menu abaixo e clique no produto que você deseja gerenciar.', iconURL: 'FOTO QUE FICA LOGO AO LADO DO NOME. RECOMENDADO QUE TENHA O TAMANHO DE 256X256' })
     .setImage(config.fotoembed)
     message.channel.send({embeds: [embed], components: [row]})
         }
