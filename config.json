@@ -5,8 +5,8 @@
     "nomebot":"NOME DO BOT",
     "cor":"#000000",
     "botao":"SUCCESS",
-    "logpublica":"ID DAS LOGS PUBLICAS",
-    "canallogs":"LOGS PRIVADAS",
+    "logpublica":"ID DO CANAL DAS LOGS PUBLICAS",
+    "canallogs":"ID DO CANAL DAS LOGS PRIVADAS",
     "catecarrinho":"CATEGORIA QUE O CARRINHO DO USUARIO IRÁ ABRIR",
     "fotoembed":"LINK DA IMAGEM OU GIF DA EMBED. O TAMANHO RECOMENDADO É DE 468X60. É RECOMENDADO QUE A LARGURA SEJA ATÉ OS 70"
 }

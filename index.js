@@ -33,7 +33,7 @@
 
         let guild = client.guilds.cache.get(""); //ID do server
         let channel = client.channels.cache.get(""); //ID do canal onde as mensagem de boas vindas vai aparcer
-        const cargo = member.guild.roles.cache.get("") //Cargo automatico
+        const cargo = member.guild.roles.cache.get("") //ID do cargo que vai ser atribuido assim que o membro entrar no servidor. 
 
         //Caso queira deixar somente a opção de cargo automatico remova o ID da ""let channel"
     
