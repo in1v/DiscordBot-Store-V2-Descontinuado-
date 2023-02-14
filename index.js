@@ -47,11 +47,10 @@
         
         let entrada = new Discord.MessageEmbed()
         .setTitle (`Bem vindo(a) a Lojas com pagamentos automaticos`)
-        .setDescription(`**Olá ${member.user.tag}\nAtualmente estamos com ${guild.memberCount} usuários.**`)
-        .setAuthor (member.user.tag, member.user.displayAvatarURL())
+        .setDescription(`**Olá ${member.user.tag}, atualmente estamos com ${guild.memberCount} usuários.**`)
         .setColor("RANDOM")
         .setThumbnail(member.user.displayAvatarURL ({dynamic: true, format: "png", size: 1024}))
-        .setFooter('ID do usuário: ' + member.user.id)
+        .setFooter({ text: 'ID do usúario:' + member.user.id})
         .setTimestamp();
     
         await channel.send({ embeds: [entrada] })
@@ -62,19 +61,20 @@
 
 
     client.on("ready", () => {
-
-    });
-
-    client.on("ready", () => {
         let activities = [
-            `Atividade`,
+            `a`,
+            `b`,
+            `c`,
+            `d`
         ],
         i = 0;
-        setInterval( () => client.user.setActivity(`${activities[i++ % activities.length]}`, {
-            type: "PLAYING"
-            }), );
+        setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, {
+           type: "WATCHING"  //PLAYING, STREAMING, LISTENING, WATCHING
+        }), 5000);
+
     });
 
+  
 
 
     process.on('multipleResolves', (type, reason, promise) => {
@@ -136,7 +136,7 @@
                     .setTitle(`${config.nomebot} | Produto`)
                     .setDescription(`\`\`\`${db.get(`${interaction.customId}.desc`)}\`\`\`\n📦 | **Produto:** **__${db.get(`${interaction.customId}.nome`)}__**\n💰 | **Preço:** **__R$${db.get(`${interaction.customId}.preco`)}__**\n🗃️ | **Estoque:** **__${db.get(`${interaction.customId}.conta`).length}__**`)
                     .setColor(config.cor)
-                    .setFooter("Para comprar clique no botão abaixo.")
+                    .setFooter({ text: 'Para comprar clique no botão abaixo.'})
                     .setImage(config.fotoembed)
                 interaction.message.edit({ embeds: [embed], components: [row] })
 
@@ -278,11 +278,10 @@
                                             }
                                         }
         
-                                        //Esses dados são para gerar o Pagamento do QR code, no caso pra constar no MercadoPago. 
-                                       //Não ira ser feito nenhuma pagamento para essa Paula! (Dados gerados no 4Dev)
+
                                         if (intera.customId === "comprarboton") {
                                             clearInterval(timer2)
-    msg.channel.bulkDelete(50);
+                                            msg.channel.bulkDelete(50);
                                             mercadopago.configurations.setAccessToken(config.access_token);
                                             var payment_data = {
                                                 transaction_amount: Number(precoalt),
@@ -328,7 +327,7 @@
                                                     .setDescription(`💸 - Efetue o pagamento de \`${eprod.nome}\` escaneando o QR Code abaixo.\n\n> Caso prefira pagar usando o copia e cola, clique no botão “📄”, o bot irá enviar nesse chat o código do seu pagamento.`)
                                                     .setImage("attachment://payment.png")
                                                     .setColor(config.cor)
-                                                    .setFooter("Após efetuar o pagamento, o tempo de entrega é de no maximo 1 minuto!")
+                                                    .setFooter({ text: 'Após efetuar o pagamento, o tempo de entrega é de no maximo 1 minuto!'})
                                                 msg.channel.send({ embeds: [embed], files: [attachment], components: [row] }).then(msg => {
 
                                                     const collector = msg.channel.createMessageComponentCollector();
@@ -411,7 +410,7 @@
                                                                     .setTitle(`${config.nomebot} | Produto`)
                                                                     .setDescription(`\`\`\`${db.get(`${interaction.customId}.desc`)}\`\`\`\n📦 - **Produto:** **__${db.get(`${interaction.customId}.nome`)}__**\n💰 - **Preço:** **__R$${db.get(`${interaction.customId}.preco`)}__**\n🗃️ - **Estoque:** **__${db.get(`${interaction.customId}.conta`).length}__**`)
                                                                     .setColor(config.cor)
-                                                                    .setFooter("Para comprar clique no botão abaixo.")
+                                                                    .setFooter({ text: 'Para comprar clique no botão abaixo.'})
                                                                     .setImage(config.fotoembed)
                                                                 interaction.message.edit({ embeds: [embed2], components: [row2] })
                                                             }}
@@ -433,7 +432,7 @@
                                                                 .setDescription(`<:seta:986039225344487425> - Efetue o pagamento de \`${eprod.nome}\` escaneando o QR Code abaixo.`)
                                                                 .setImage("attachment://payment.png")
                                                                 .setColor(config.cor)
-                                                                .setFooter("Após efetuar o pagamento, o tempo de entrega é de no maximo 1 minuto!")
+                                                                .setFooter({ text: 'Após efetuar o pagamento, o tempo de entrega é de no maximo 1 minuto!'})
                                                             msg.edit({ embeds: [embed], files: [attachment], components: [row] })
                                                             interaction.channel.send(data.body.point_of_interaction.transaction_data.qr_code)
                                                         }

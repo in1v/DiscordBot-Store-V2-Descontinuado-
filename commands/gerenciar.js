@@ -9,7 +9,6 @@
             const embederro = new Discord.MessageEmbed()
             .setDescription(`Você não tem permissão para executar esse comando.`)
             .setColor(config.cor)
-            .setFooter(`${config.nomebot}`)
                     if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send({ embeds: [embederro] })
                     const embednprod = new Discord.MessageEmbed()
                     .setTitle("Sistema de gerenciamento de produtos")
@@ -34,7 +33,7 @@
     .setTitle(`${config.nomebot} | Sistema de gerenciamento de produtos`)
     .setDescription(`Menu de gerenciamento de produtos`)
     .setColor(config.cor)
-    .setFooter("Selecione o menu abaixo e clique no produto que você deseja gerenciar.")
+    .setFooter({ text: 'Selecione o menu abaixo e clique no produto que você deseja gerenciar.', iconURL: 'https://cdn.discordapp.com/attachments/1074427460164272210/1074850847059615845/Sem_titulo.png' })
     .setImage(config.fotoembed)
     message.channel.send({embeds: [embed], components: [row]})
         }

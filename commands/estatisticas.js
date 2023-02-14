@@ -20,7 +20,6 @@ module.exports = {
         .setTitle(`Sem permissão`)
         .setDescription(`Você não tem permissão para executar esse comando.`)
         .setColor(config.cor)
-        .setFooter(`${config.nomebot}`)
                 if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send({ embeds: [embederro] })
      
         const hojepedidos = db2.get(`${moment().format('L')}.pedidos`)  || 0;

@@ -26,14 +26,12 @@ module.exports = {
 
         const gasto = db2.get(`${id}.gastosaprovados`) || "0";
      const pedidos = db2.get(`${id}.pedidosaprovados`) || "0";
-        if(id === "898209296393842758") {
+        if(id === "") {
             const embed = new Discord.MessageEmbed()
 .addField(`👤 | Nome:`, `\`${tag}\``, true)
 .addField(`🪪 | ID:`, `\`${id}\``, true)
 .addField(`💸 | Total Gasto:`, `\`R$1,000,000\``, true)
 .addField(`📦 | Compras:`, `\`${pedidos}\``, true)
-.addField(`🥇 | Rank:`, `\`DEUS\``, true)
-.addField(`🎖️ | Proximo Rank:`, `\`NO RANKS\``, true)
 .setColor(config.cor)
 message.channel.send({embeds: [embed]})
         } else {
@@ -43,8 +41,6 @@ const embed = new Discord.MessageEmbed()
 .addField(`🪪 | ID:`, `\`${id}\``, true)
 .addField(`💸 | Total Gasto:`, `\`R$${gasto},00\``, true)
 .addField(`📦 | Compras:`, `\`${pedidos}\``, true)
-.addField(`🥇 | Rank:`, `\`Vip 1\``, true)
-.addField(`🎖️ | Proximo Rank:`, `\`Vip 2 - [${gasto}/100]\``, true)
 .setColor(config.cor)
 message.channel.send({embeds: [embed]})
      }
@@ -54,8 +50,7 @@ message.channel.send({embeds: [embed]})
         .addField(`🪪 | ID:`, `\`${id}\``, true)
         .addField(`💸 | Total Gasto:`, `\`R$${gasto},00\``, true)
         .addField(`📦 | Compras:`, `\`${pedidos}\``, true)
-        .addField(`🥇 | Rank:`, `\`Vip 2\``, true)
-        .addField(`🎖️ | Proximo Rank:`, `\`Vip 3 - [${gasto}/10,000]\``, true)
+
         .setColor(config.cor)
         message.channel.send({embeds: [embed]})
      }

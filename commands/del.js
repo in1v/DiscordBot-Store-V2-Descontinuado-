@@ -10,7 +10,6 @@ module.exports = {
         const embederro = new Discord.MessageEmbed()
             .setDescription(`Você não tem permissão para executar esse comando.`)
             .setColor(config.cor)
-            .setFooter(`${config.nomebot}`)
         if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send({ embeds: [embederro] })
     if(!args[0]) return message.channel.send("❌ | Coloque o ID do produto que deseja **deletar.**")
     db.delete(`${args.join(" ")}`)
