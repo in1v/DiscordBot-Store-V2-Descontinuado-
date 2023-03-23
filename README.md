@@ -4,7 +4,6 @@
 
 Para qualquer tipo de Suporte entre no Discord > https://discord.gg/NmgHNWPQ64
 
-![Terminal](https://cdn.discordapp.com/attachments/1074427460164272210/1074803742781755523/image.png)
 
 
 ## Funcionalidades
